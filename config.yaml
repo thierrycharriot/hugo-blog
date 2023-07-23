@@ -1,6 +1,6 @@
 # Basic setup
-baseURL:        ''
-#baseURL:        'http://localhost/Public/public-blog/'
+#baseURL:        ''
+baseURL:        'http://localhost/Public/public-blog/'
 languageCode:   'fr-FR'
 title:          'Hugo Blog'
 

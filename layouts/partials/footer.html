@@ -3,7 +3,7 @@
 
         <div class="lg:w-1/4">
             <a rel="noopener noreferrer" href="{{ .Site.BaseURL }}"
-                class="flex justify-between space-x-3 lg:justify-start">
+                class="flex justify-between space-x-3 lg:justify-start hover:text-amber-600">
                 <div class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-300">
                     <img src="{{ .Site.BaseURL }}/img/Recycling_symbol.svg" class="w-9 h-9" alt="Logo recycling">
                 </div>
@@ -13,7 +13,7 @@
 
         <div class="flex-row space-y-3 text-sm gap-x-3 gap-y-8 w-3/4 lg:grid lg:grid-cols-3">
             <div class="space-y-3 col-span-2">
-                <h3 class="uppercase text-amber-200">Citations</h3>
+                <p class="uppercase text-amber-200">Citations</p>
                 <ul class="space-y-1">
                     {{ range .Site.Data.citations }}
                     <li class="">{{ .citation }} <a rel="noopener noreferrer" class="underline hover:no-underline"
@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="space-y-3">
-                <h3 class="uppercase text-amber-200">Quick link(s):</h3>
+                <p class="uppercase text-amber-200">Quick link(s):</p>
                 <ul class="space-y-1">
                     {{ range .Site.Data.connect }}
                     <li class=""><a rel="noopener noreferrer" class="underline hover:no-underline" href="{{ .url }}">{{
