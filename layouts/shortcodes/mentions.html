@@ -1,6 +1,6 @@
 <section class="flex-row lg:flex lg:justify-between">
 
-    <div class="lg:container lg:w-6/12 mx-auto">
+    <div class="lg:w-6/12 text-justify lg:pr-3">
         <h3 class="">Propriétaire du site : {{ .Site.Params.author }}</h3>
         <p>
             Le site <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> est un site personnel à caractère informatif. Les informations qui y sont publiées sont mises à 
@@ -50,14 +50,14 @@
         </p>
     </div>
 
-    <div id="map" class="my-6 lg:container lg:w-5/12 mx-auto bg-white h-96 lg:h-auto"></div>
+    <div id="map" class="my-6 lg:w-6/12 bg-white h-96 lg:h-auto shadow-lg"></div>
 
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+    crossorigin="" defer></script>
 
     {{ $leaflet := resources.Get "js/leaflet.js" }}
-    <script src="{{- $leaflet.Permalink | relURL -}}"></script>
+    <script src="{{- $leaflet.Permalink | relURL -}}" defer></script>
 
 </section>
