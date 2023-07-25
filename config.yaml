@@ -1,6 +1,6 @@
 # Basic setup
-#baseURL:        ''
-baseURL:        'http://localhost/Public/public-blog/'
+baseURL:        ''
+#baseURL:        'http://localhost/Public/public-blog/'
 languageCode:   'fr-FR'
 title:          'Hugo Blog'
 
@@ -27,5 +27,5 @@ menu:
 params:
   author:       'François Perrin'
   description:  'Un site web généré avec Hugo'
-  email:        'francois@chez.lui'
+  email:        'francois(signe bizarre)chez.lui'
   github:       'https://github.com/bibibricodeur'
