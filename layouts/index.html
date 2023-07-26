@@ -1,50 +1,42 @@
 {{ define "main" }}
 
-<main class="text-white">
+<main class="container mx-auto">
 
-    <article class="container grid grid-cols-12 mx-auto py-6">
+    <article class="grid grid-cols-12 text-white p-3 lg:px-0">
 
-        {{ range first 1 .Site.RegularPages.ByDate.Reverse }}
-        {{ if not .Params.draft }}
-        <div class="flex flex-col justify-center col-span-12 align-middle bg-no-repeat bg-cover bg-stone-600 lg:col-span-6 lg:h-auto"
-            style="background-image: url('https://source.unsplash.com/random/640x480'); background-position: center center; background-blend-mode: multiply; background-size: cover;">
-            <div class="flex flex-col items-center p-8 py-12 text-center">
+        <section class="p-3 lg:m-3 lg:p-6 flex flex-col justify-center rounded col-span-12 align-middle bg-no-repeat bg-cover bg-stone-600 lg:col-span-6 lg:h-auto"
+        style="background-image: url('https://source.unsplash.com/random/640x480'); background-position: center; background-blend-mode: multiply; background-size: cover;">
+            <div class="flex flex-col items-center">
                 <span>{{ if .Date }} {{ .Date.Format "02/01/2006" }} {{ end }}</span>
                 <h1 class="py-4 text-5xl font-bold">{{- .Title -}}.</h1>
-                <p class="pb-6">{{ .Summary }}!</p>
+                <div class="text-justify">{{ .Content }}</div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-7 h-7">
                     <path fill-rule="evenodd"
                         d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
                         clip-rule="evenodd"></path>
                 </svg>
             </div>
-        </div>
-        {{ end }}
-        {{ end }}
+        </section>
 
-        <div class="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 divide-stone-700">
+        <section class="flex lg:m-3 flex-col col-span-12 divide-y lg:col-span-6 divide-stone-700">
 
             {{ range first 3 .Site.RegularPages.ByDate.Reverse }}
             {{ if not .Params.draft }}
             <div class="pt-6 pb-4 space-y-2">
                 <span>{{ if .Date }} {{ .Date.Format "02/01/2006" }} {{ end }}</span>
                 <h1 class="text-3xl font-bold">{{- .Title -}}.</h1>
-                <p>{{ .Summary }}!</p>
-                <a rel="noopener noreferrer" href="{{ .Permalink }}"
-                    class="inline-flex items-center py-2 space-x-2 text-white underline hover:no-underline">
-                    <span class="font-semibold">En savoir plus</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                        <path fill-rule="evenodd"
-                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
+                <div class="text-justify">{{ .Summary }}!</div>
+                <p>
+                    <a href="{{ .RelPermalink }}"
+                    class="underline bg-green-900 hover:bg-green-600 text-white font-bold py-3 px-3 border border-green-700 rounded hover:no-underline hover:transition hover:duration-300 text-center">Read
+                    more →</a>
+                </p>
+
             </div>
             {{ end }}
             {{ end }}
             
-        </div>
-
+        </section>
 
     </article>
 
